@@ -68,15 +68,13 @@ public class Menu {
 				RepositorioContas repositorio = new RepositorioContasArray(100);
 				Banco bank = new Banco(repositorio);
 				
-				
+					
 				if(number2==1) {
 					System.out.println(numeroDaconta);
 					number= receber.next();
 					System.out.println(valorConta);
 					valor=receber.nextDouble();
-					System.out.println(repositorio);
-					conta = new Conta(number, valor);
-					bank.cadastrar(new Conta(number));
+					conta = new Conta(number,valor);
 					
 				}else if(number2==2) {
 					System.out.println(numeroDaconta);
@@ -84,7 +82,6 @@ public class Menu {
 					System.out.println(valorConta);
 					valor=receber.nextDouble();
 					conta = new ContaImposto(number, valor);
-					bank.cadastrar(new ContaImposto(number,valor));
 					
 				}else if(number2==3) {
 					System.out.println(numeroDaconta);
@@ -92,7 +89,7 @@ public class Menu {
 					System.out.println(valorConta);
 					valor=receber.nextDouble();
 					conta = new ContaEspecial(number, valor);
-					bank.cadastrar(new ContaEspecial(number,valor));
+
 					System.out.println(repositorio);
 				}
 				else if(number2==4) {
@@ -101,7 +98,6 @@ public class Menu {
 					System.out.println(valorConta);
 					valor=receber.nextDouble();
 					conta = new Poupanca(number, valor);
-				    bank.cadastrar(new Poupanca(number));
 					System.out.println(repositorio);
 					
 				}
@@ -110,16 +106,17 @@ public class Menu {
 					number=receber.next();
 					System.out.println(valorConta);
 					valor=receber.nextDouble();
-					bank.cadastrar(new PoupancaEsp(number));
 					conta = new Poupanca(number, valor);
 					
 				}	
+				
 				try {
-					banco.cadastrar(conta);
-					System.out.println(repositorio);
-					System.out.println("Conta Criada com sucesso ! \n"
-							+ "Conta: \n"+conta.getNumero()+
-							"Saldo :  \n"+conta.getSaldo());
+						System.out.println("Conta Criada com sucesso ! \n"
+						+ "\n Conta: "+conta.getNumero()+
+						"\n Saldo :  \n"+conta.getSaldo());
+					   bank.cadastrar(new Conta(number));
+					    System.out.println(repositorio);
+					
 		
 				}
 					

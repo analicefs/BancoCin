@@ -21,7 +21,7 @@ public class Banco {
 		this.contas = rep;
 	}
 
-	public void cadastrar(ContaAbstrata conta) throws ContaJaCadastradaException, OperacaoComValoresNegativoException{
+	public void cadastrar(ContaAbstrata conta) throws ContaJaCadastradaException{
 		String numero = conta.getNumero();
 		if (contas.existe(numero)) {
 			throw new ContaJaCadastradaException();
